@@ -57,7 +57,7 @@
       true,
       {
         "enforceBuildableLibDependency": true,
-        "allow": [],
+        "allow": ["@tmo/shared"],
         "depConstraints": [
           {
             "sourceTag": "*",

@@ -13,8 +13,15 @@ DRY Principle
 - since API Endpoints are used in multiple places I would make them CONSTANTS instead of hard coded strings which can be proned to errors -> benefits track, change & debug in a single location
 - repeat for all areas where hard coded strings are used mutiple times
 
+Code Cleanup/Improvements
+- add type annotations where appropriate in libs/books only
+- removed unused lifecycle ngOnInit total-count.component.ts
+
 
 Acccessibility
+- [Lighthouse] Contrast failed - ReadingList button
+- [Lighthouse] Contrast failed - Search Placeholder text
+- [Lighthouse] Contrast failed - "Try searching..." hint text
 - screen reader label for ReadingList button not set
 - screen reader label for ReadingListTotalCount not set
 - screen reader label for Search field not set

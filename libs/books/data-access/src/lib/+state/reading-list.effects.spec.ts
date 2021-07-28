@@ -7,7 +7,6 @@ import { HttpTestingController } from '@angular/common/http/testing';
 import { SharedTestingModule } from '@tmo/shared/testing';
 import { ReadingListEffects } from './reading-list.effects';
 import * as ReadingListActions from './reading-list.actions';
-import { API_ENDPOINT } from '@tmo/books/data-access';
 
 describe('ToReadEffects', () => {
   let actions: ReplaySubject<any>;
@@ -40,7 +39,7 @@ describe('ToReadEffects', () => {
         done();
       });
 
-      httpMock.expectOne(API_ENDPOINT.READING_LIST).flush([]);
+      httpMock.expectOne('/api/reading-list/').flush([]);
     });
   });
 });

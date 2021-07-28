@@ -7,7 +7,7 @@
       placeholder="Search for books to add to your reading list"
       formControlName="term"
     />
-    <button mat-icon-button matSuffix aria-label="search icon">
+    <button mat-icon-button matSuffix aria-label="search">
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
@@ -47,10 +47,10 @@
 </ng-container>
 <ng-template #empty>
   <div class="empty">
-    <p id="searchTip">
-      Try searching for a topic, for example "<a (click)="searchExample()"
-        >JavaScript</a
-      >".
+    <p>
+      Try searching for a topic, for example <q (click)="searchExample()"
+        >JavaScript</q
+      >.
     </p>
   </div>
 </ng-template>

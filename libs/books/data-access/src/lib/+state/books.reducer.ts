@@ -43,6 +43,6 @@ const booksReducer = createReducer(
   on(BooksActions.clearSearch, state => booksAdapter.removeAll(state))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: State | undefined, action: Action): State {
   return booksReducer(state, action);
 }

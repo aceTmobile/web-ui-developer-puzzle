@@ -347,34 +347,6 @@
           }
         }
       }
-    },
-    "shared-utils-accessibility": {
-      "root": "libs/shared/utils-accessibility",
-      "sourceRoot": "libs/shared/utils-accessibility/src",
-      "prefix": "tmo",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/utils-accessibility/tsconfig.lib.json",
-              "libs/shared/utils-accessibility/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/utils-accessibility/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/utils-accessibility/jest.config.js",
-            "tsConfig": "libs/shared/utils-accessibility/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
     }
   },
   "cli": {

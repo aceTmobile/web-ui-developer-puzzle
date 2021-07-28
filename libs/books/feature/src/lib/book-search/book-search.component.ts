@@ -37,22 +37,22 @@ export class BookSearchComponent implements OnInit {
     });
   }
 
-  formatDate(date: void | string) {
+  formatDate(date: void | string): string {
     return date
       ? new Intl.DateTimeFormat('en-US').format(new Date(date))
       : undefined;
   }
 
-  addBookToReadingList(book: Book) {
+  addBookToReadingList(book: Book): void {
     this.store.dispatch(addToReadingList({ book }));
   }
 
-  searchExample() {
+  searchExample(): void {
     this.searchForm.controls.term.setValue('javascript');
     this.searchBooks();
   }
 
-  searchBooks() {
+  searchBooks(): void {
     if (this.searchForm.value.term) {
       this.store.dispatch(searchBooks({ term: this.searchTerm }));
     } else {

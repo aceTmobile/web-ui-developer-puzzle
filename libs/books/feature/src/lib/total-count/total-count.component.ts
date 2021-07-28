@@ -1,29 +1,24 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewChecked, ElementRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getTotalUnread } from '@tmo/books/data-access';
-import { SelectorQuery, SelectorType, setAriaLabel } from '@tmo/shared/utils-accessibility';
 @Component({
   selector: 'tmo-total-count',
   templateUrl: './total-count.component.html',
   styleUrls: ['./total-count.component.scss']
 })
-export class TotalCountComponent implements OnInit, AfterViewChecked {
+export class TotalCountComponent implements AfterViewChecked {
   totalUnread$ = this.store.select(getTotalUnread);
 
-  constructor(private readonly store: Store) {}
-
-  ngOnInit(): void {}
+  constructor(private readonly store: Store, private element: ElementRef) {}
   
   ngAfterViewChecked(): void {
-    this.configureAccessibility()
+    this.configureAccessibility();
   }
 
-  configureAccessibility() {
-    const selectorQuery = {} as SelectorQuery;
-    selectorQuery.selector = "mat-badge-content-0";
-    selectorQuery.type = SelectorType.id;
-    selectorQuery.ariaLabelValue = "the reading list total count";
-
-    setAriaLabel(selectorQuery);
+  configureAccessibility(): void {
+    const elem = this.element.nativeElement.querySelector('#mat-badge-content-0');
+    if (elem) {
+      elem.setAttribute('aria-label', 'the reading list total count');
+    }
   }
 }

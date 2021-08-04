@@ -8,7 +8,7 @@ export const READING_LIST_FEATURE_KEY = 'readingList';
 
 export interface State extends EntityState<ReadingListItem> {
   loaded: boolean;
-  error: null | string;
+  error?: null | string;
 }
 
 export interface ReadingListPartialState {

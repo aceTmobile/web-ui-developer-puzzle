@@ -14,15 +14,20 @@ DRY Principle
 - repeat for all areas where hard coded strings are used mutiple times
 
 Code Cleanup/Improvements
-- add type annotations where appropriate in libs/books only
-- removed unused lifecycle ngOnInit total-count.component.ts
+- add type annotations where appropriate to class members & methods
+- add optional syntax to interface | State interface reading-list.reducer.ts
+- removed unused lifecycle event | fix: ngOnInit total-count.component.ts
+- removed format date class method | fix:  used "| date:..." in view instead
+- memory leaks[observables] | no unsubscribe | fix: moved from .ts to view and used "| async"
+
 
 
 Acccessibility
-- [Lighthouse] Contrast failed - ReadingList button
-- [Lighthouse] Contrast failed - Search Placeholder text
-- [Lighthouse] Contrast failed - "Try searching..." hint text
-- screen reader label for ReadingList button not set
-- screen reader label for ReadingListTotalCount not set
-- screen reader label for Search field not set
-- screen reader label for Search icon not set
+- [Lighthouse] Contrast failed - ReadingList button | fix: Changed the background color from $pink-accent  to $pink-dark
+- [Lighthouse] Contrast failed - Search Placeholder text | fix: changed foreground color from $gray40 to $gray60
+- [Lighthouse] Contrast failed - "Try searching..." hint text | fix: changed foreground color from $gray40 to $gray60
+
+- screen reader label for ReadingList button not set | fix: add aria label
+- screen reader label for ReadingListTotalCount not set | fix: add aria label
+- screen reader label for Search field not set | fix: add aria label
+- screen reader label for Search icon not set | fix: add aria label

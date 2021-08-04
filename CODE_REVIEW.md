@@ -27,7 +27,6 @@ Acccessibility
 - [Lighthouse] Contrast failed - Search Placeholder text | fix: changed foreground color from $gray40 to $gray60
 - [Lighthouse] Contrast failed - "Try searching..." hint text | fix: changed foreground color from $gray40 to $gray60
 
-- screen reader label for ReadingList button not set | fix: add aria label
-- screen reader label for ReadingListTotalCount not set | fix: add aria label
-- screen reader label for Search field not set | fix: add aria label
-- screen reader label for Search icon not set | fix: add aria label
+- [Manual] screen reader label for ReadingList button not set | fix: add aria label
+- [Manual] screen reader label for Search field not set | fix: add aria label
+- [Manual] add alt attribute to image tags

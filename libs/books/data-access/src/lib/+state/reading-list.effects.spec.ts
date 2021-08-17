@@ -39,7 +39,7 @@ describe('ToReadEffects', () => {
         done();
       });
 
-      httpMock.expectOne('/api/reading-list').flush([]);
+      httpMock.expectOne('/api/reading-list/').flush([]);
     });
   });
 });

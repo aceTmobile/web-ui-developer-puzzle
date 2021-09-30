@@ -6,7 +6,7 @@ describe('When: I use the reading list feature', () => {
   }
   function clearReadingList() {
     cy.get('[data-testing="toggle-reading-list"]').click();
-    cy.get('.reading-list-item button').click({multiple: true});
+    cy.get('#reading-list-item').click();
     cy.get('[data-testing="reading-list-container"] button').click();
   }
   function hasItemsInReadingList(): boolean {
@@ -59,14 +59,37 @@ describe('When: I use the reading list feature', () => {
       } else {
         addItemToReadingList();
       }
+      cy.get('[data-testing="toggle-reading-list"]').click();
     });
 
     it('Then: I should be able to undo my action', () => {
-      cy.get('[data-testing="toggle-reading-list"]').click();
       cy.get('tmo-reading-list button').first().click();
-      cy.get('simple-snack-bar button[mat-button]').last().click();
+      cy.get('simple-snack-bar').last().click();
       cy.get('tmo-reading-list button').should('have.length.greaterThan', 0);
     });
   });
 
+  describe('When: I use the mark as read feature', () => {
+    beforeEach(() => {
+      cy.startAt('/');
+      // Ensure clean state before test
+      if ( hasItemsInReadingList() ) {
+        clearReadingList();
+        addItemToReadingList();
+        cy.get('[data-testing="toggle-reading-list"]').click();
+      }
+    });
+  
+    it('Then: I should see the mark as read button disabled', () => {
+      cy.get('#markAsRead')
+        .click();
+  
+      cy.get('#markAsRead')
+        .should('be.disabled');
+  
+      cy.get('#finishedDate')
+        .should('be.visible');
+    });
+  });
 });
+
